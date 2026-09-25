@@ -1,5 +1,5 @@
 name: Handle Issue
-on: issue
+on: issues
 jobs: 
   Output_info:
   runs-on: ubuntu-latest
