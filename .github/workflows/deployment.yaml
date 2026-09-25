@@ -11,6 +11,7 @@ jobs:
       - name: lint code
         run: npm run lint
   Test:
+    needs: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -18,8 +19,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: tseting
-        run: npm run Test
+        run: npm run test
   Deploy:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
